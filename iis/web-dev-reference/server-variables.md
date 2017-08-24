@@ -17,6 +17,8 @@ IIS Server Variables provide information about the server, the connection with
 the client, and the current request on the connection. Additionally, inbound
 URL rewrite rules can be used to set custom server variables.
 
+> [!NOTE]
+> Not all server variables listed in this document are available in versions of IIS prior to IIS 8.5.
 
 
 | Server Variable       | Description                                           |
@@ -42,10 +44,10 @@ URL rewrite rules can be used to set custom server variables.
 | CERT_SUBJECT          | The subject field of the client certificate. |
 | CONTENT_LENGTH        | The length of the request body.  |
 | CONTENT_TYPE          | The MIME type of the request body. Used with queries that have attached information, such as **GET**, **POST**, and **PUT**. |
-| CRYPT_CIPHER_ALG_ID   | The cryptographic cipher algorithm used to establish the connection. The hex value of the algorithm is established in the [*ALG_ID* data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, 256-bit AES(CALG_AES_256) will be `6610`. |
-| CRYPT_HASH_ALG_ID     | The hashing algorithm used for generating Message Authentication Codes (MACs). The hex value of the algorithm is established in the [*ALG_ID* data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, MD5(CALG_MD5) will be `8003`.|
-| CRYPT_KEYEXCHANGE_ALG_ID | The key-exchange algorithm used to establish the connection. The hex value of the algorithm is established in the [*ALG_ID* data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, Elliptic curve Diffie-Hellman key exchange algorithm(CALG_ECDH) will be `aa05`. |
-| CRYPT_PROTOCOL        | The cryptographic protocol used to establish the connection. The hex value of the protocol is established in the [*SecPkgContext_ConnectionInfo* structure](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379819(v=vs.85).aspx). For an HTTP request, the value will be `-`.<br/>For example, **TLS 1.2** will be `400`. |
+| CRYPT_CIPHER_ALG_ID   | The cryptographic cipher algorithm used to establish the connection. The hex value of the algorithm is established in the [ALG_ID data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, 256-bit AES(CALG_AES_256) will be `6610`. |
+| CRYPT_HASH_ALG_ID     | The hashing algorithm used for generating Message Authentication Codes (MACs). The hex value of the algorithm is established in the [ALG_ID data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, MD5(CALG_MD5) will be `8003`.|
+| CRYPT_KEYEXCHANGE_ALG_ID | The key-exchange algorithm used to establish the connection. The hex value of the algorithm is established in the [ALG_ID data type](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375549(v=vs.85).aspx).<br/>For example, Elliptic curve Diffie-Hellman key exchange algorithm(CALG_ECDH) will be `aa05`. |
+| CRYPT_PROTOCOL        | The cryptographic protocol used to establish the connection. The hex value of the protocol is established in the [SecPkgContext_ConnectionInfo structure](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379819(v=vs.85).aspx).<br/>For example, **TLS 1.2** will be `400`. |
 | DOCUMENT_ROOT         | The physical path of the directory the IIS Website. |
 | FORWARDED_URL         | The forwarded URL. |
 | GATEWAY_INTERFACE     | The revision of the CGI specification used by the server. The format is CGI/revision. |
